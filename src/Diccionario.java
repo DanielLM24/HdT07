@@ -12,6 +12,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import javax.swing.JOptionPane;
+import java.util.Scanner;
+        
 
 public class Diccionario {
     private File txt;
@@ -24,7 +26,14 @@ public class Diccionario {
         }
         catch(NullPointerException e) {
             JOptionPane.showMessageDialog(null, "No existe el archivo", "Error", JOptionPane.ERROR_MESSAGE);
-        System.exit(0);
+            System.exit(0);
+        }
+        try{
+            Scanner s = new Scanner(txt);
+        }
+        catch (FileNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "No existe el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
         }
         
     }
